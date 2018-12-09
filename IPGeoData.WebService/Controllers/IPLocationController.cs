@@ -10,12 +10,12 @@ namespace IPGeoData.WebService.Controllers
     [Route("IPLocation")]
     public class IPLocationController : Controller
     {
-        private readonly IPLocationsManager _manager;
+        private readonly IPLocationsManager _locationManager;
         private readonly ILogger<IPLocationController> _logger;
 
-        public IPLocationController(IPLocationsManager manager, ILogger<IPLocationController> logger)
+        public IPLocationController(IPLocationsManager locationManager, ILogger<IPLocationController> logger)
         {
-            _manager = manager;
+            _locationManager = locationManager;
             _logger = logger;
         }
 
@@ -32,7 +32,7 @@ namespace IPGeoData.WebService.Controllers
 
             try
             {
-                return Ok(_manager.Get(ipAddress));
+                return Ok(_locationManager.GetLocation(ipAddress));
             }
             catch (Exception exc)
             {

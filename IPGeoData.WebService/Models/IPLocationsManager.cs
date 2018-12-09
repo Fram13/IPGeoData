@@ -19,7 +19,7 @@ namespace IPGeoData.WebService.Models
             _logger = logger;
         }
 
-        public Location Get(IPAddress ip)
+        public Location GetLocation(IPAddress ip)
         {
             var location = _context.IPLocations.All.Where(l => l.IP == ip).SingleOrDefault();
 

@@ -15,12 +15,12 @@ namespace IPGeoData.Model
 
         public void Add(IPLocation item)
         {
-            _context.Add(item);
+            _context.IPLocations.Add(item);
         }
 
         public void Update(IPLocation item)
         {
-            _context.Update(item);
+            _context.IPLocations.Update(item);
         }
     }
 }
